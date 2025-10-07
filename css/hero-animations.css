@@ -1,0 +1,467 @@
+/* ============================================
+   ISLAMIC & EDUCATIONAL HERO ANIMATIONS
+   Beautiful, subtle animations for all hero sections
+   ============================================ */
+
+/* Hero Animation Container */
+.hero-animation-container,
+.courses-hero-animation,
+.course-detail-hero-animation,
+.course-hero-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Islamic Geometric Patterns - Floating Stars */
+.islamic-star {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    opacity: 0.15;
+    animation: float 20s infinite ease-in-out;
+}
+
+.islamic-star:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.islamic-star:nth-child(2) {
+    top: 20%;
+    right: 15%;
+    animation-delay: 2s;
+    animation-duration: 22s;
+}
+
+.islamic-star:nth-child(3) {
+    bottom: 15%;
+    left: 15%;
+    animation-delay: 4s;
+    animation-duration: 20s;
+}
+
+.islamic-star:nth-child(4) {
+    bottom: 25%;
+    right: 10%;
+    animation-delay: 6s;
+    animation-duration: 24s;
+}
+
+.islamic-star:nth-child(5) {
+    top: 50%;
+    left: 5%;
+    animation-delay: 3s;
+    animation-duration: 19s;
+}
+
+.islamic-star:nth-child(6) {
+    top: 40%;
+    right: 8%;
+    animation-delay: 5s;
+    animation-duration: 21s;
+}
+
+/* SVG Islamic Star Pattern */
+.islamic-star svg {
+    width: 100%;
+    height: 100%;
+    fill: #3498db;
+    filter: drop-shadow(0 0 10px rgba(52, 152, 219, 0.3));
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.1;
+    }
+    25% {
+        transform: translate(20px, -30px) rotate(90deg);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translate(-15px, -50px) rotate(180deg);
+        opacity: 0.15;
+    }
+    75% {
+        transform: translate(25px, -25px) rotate(270deg);
+        opacity: 0.2;
+    }
+}
+
+/* Educational Icons - Books, Pens, Graduation Caps */
+.edu-icon {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.12;
+    animation: pulse-float 15s infinite ease-in-out;
+    color: #2ecc71;
+}
+
+.edu-icon:nth-child(odd) {
+    animation-name: pulse-float-alt;
+}
+
+.edu-icon.icon-1 {
+    top: 15%;
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.edu-icon.icon-2 {
+    top: 30%;
+    right: 20%;
+    animation-delay: 3s;
+}
+
+.edu-icon.icon-3 {
+    bottom: 20%;
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.edu-icon.icon-4 {
+    bottom: 30%;
+    right: 25%;
+    animation-delay: 4s;
+}
+
+.edu-icon.icon-5 {
+    top: 60%;
+    left: 12%;
+    animation-delay: 1.5s;
+}
+
+@keyframes pulse-float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.1);
+        opacity: 0.15;
+    }
+}
+
+@keyframes pulse-float-alt {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.12;
+    }
+    50% {
+        transform: translateY(-30px) rotate(180deg) scale(1.15);
+        opacity: 0.18;
+    }
+}
+
+/* Quran Pages Animation */
+.quran-page {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    border-radius: 3px;
+    opacity: 0.08;
+    animation: page-turn 25s infinite ease-in-out;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.quran-page:nth-child(1) {
+    top: 12%;
+    right: 12%;
+    animation-delay: 0s;
+}
+
+.quran-page:nth-child(2) {
+    bottom: 18%;
+    left: 18%;
+    animation-delay: 3s;
+}
+
+.quran-page:nth-child(3) {
+    top: 45%;
+    right: 22%;
+    animation-delay: 6s;
+}
+
+@keyframes page-turn {
+    0%, 100% {
+        transform: perspective(500px) rotateY(0deg) translateY(0);
+        opacity: 0.08;
+    }
+    25% {
+        transform: perspective(500px) rotateY(90deg) translateY(-15px);
+        opacity: 0.12;
+    }
+    50% {
+        transform: perspective(500px) rotateY(180deg) translateY(-20px);
+        opacity: 0.1;
+    }
+    75% {
+        transform: perspective(500px) rotateY(270deg) translateY(-10px);
+        opacity: 0.15;
+    }
+}
+
+/* Particle Lights */
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    animation: particle-rise 8s infinite ease-out;
+}
+
+.particle:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.particle:nth-child(3) {
+    left: 40%;
+    animation-delay: 4s;
+}
+
+.particle:nth-child(4) {
+    left: 55%;
+    animation-delay: 1s;
+}
+
+.particle:nth-child(5) {
+    left: 70%;
+    animation-delay: 3s;
+}
+
+.particle:nth-child(6) {
+    left: 85%;
+    animation-delay: 5s;
+}
+
+.particle:nth-child(7) {
+    left: 15%;
+    animation-delay: 6s;
+}
+
+.particle:nth-child(8) {
+    left: 90%;
+    animation-delay: 7s;
+}
+
+@keyframes particle-rise {
+    0% {
+        bottom: 0;
+        opacity: 0;
+        transform: translateX(0);
+    }
+    20% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.3;
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+/* Arabic Calligraphy Glow Effect */
+.calligraphy-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glow-pulse 4s infinite ease-in-out;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+/* Mosque Silhouette */
+.mosque-icon {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 60px;
+    opacity: 0.08;
+    color: #fff;
+    animation: mosque-pulse 6s infinite ease-in-out;
+}
+
+@keyframes mosque-pulse {
+    0%, 100% {
+        opacity: 0.06;
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        opacity: 0.12;
+        transform: translateX(-50%) scale(1.05);
+    }
+}
+
+/* Gradient Orbs */
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    animation: orb-float 20s infinite ease-in-out;
+}
+
+.gradient-orb.orb-1 {
+    top: 20%;
+    left: 20%;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    animation-delay: 0s;
+}
+
+.gradient-orb.orb-2 {
+    bottom: 20%;
+    right: 20%;
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, #9b59b6, #3498db);
+    animation-delay: 3s;
+}
+
+.gradient-orb.orb-3 {
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #2ecc71, #f39c12);
+    animation-delay: 6s;
+}
+
+@keyframes orb-float {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    33% {
+        transform: translate(50px, -50px);
+    }
+    66% {
+        transform: translate(-30px, 30px);
+    }
+}
+
+/* Knowledge Sparkles */
+.sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    opacity: 0;
+    animation: sparkle-twinkle 3s infinite ease-in-out;
+}
+
+.sparkle:nth-child(1) {
+    top: 20%;
+    left: 30%;
+    animation-delay: 0s;
+}
+
+.sparkle:nth-child(2) {
+    top: 40%;
+    right: 25%;
+    animation-delay: 1s;
+}
+
+.sparkle:nth-child(3) {
+    bottom: 30%;
+    left: 40%;
+    animation-delay: 2s;
+}
+
+.sparkle:nth-child(4) {
+    top: 60%;
+    right: 35%;
+    animation-delay: 1.5s;
+}
+
+@keyframes sparkle-twinkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1) rotate(180deg);
+    }
+}
+
+/* Mobile Optimization - Reduce animations */
+@media (max-width: 768px) {
+    .islamic-star,
+    .edu-icon,
+    .quran-page,
+    .gradient-orb {
+        display: none; /* Hide complex animations on mobile for performance */
+    }
+    
+    .particle {
+        animation-duration: 12s; /* Slower on mobile */
+    }
+    
+    .calligraphy-glow {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .mosque-icon {
+        font-size: 40px;
+    }
+}
+
+/* Ensure hero content stays above animations */
+.hero .container,
+.courses-hero .container,
+.course-detail-hero .container,
+.course-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Subtle overlay to ensure text readability */
+.hero-animation-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.1) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
