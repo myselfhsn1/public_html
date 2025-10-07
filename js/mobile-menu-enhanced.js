@@ -15,6 +15,8 @@
             return;
         }
         
+        console.log('Mobile menu initialization starting...');
+        
         // Create overlay if it doesn't exist
         let overlay = document.querySelector('.mobile-menu-overlay');
         if (!overlay) {
@@ -45,13 +47,6 @@
             
             // Prevent scrolling when menu is open
             if (body) body.style.overflow = 'hidden';
-            
-            // Add animation class for smooth entry
-            if (nav) {
-                setTimeout(() => {
-                    nav.style.transform = 'translateX(0)';
-                }, 10);
-            }
         }
         
         // Close mobile menu
@@ -64,8 +59,8 @@
             // Restore scrolling
             if (body) body.style.overflow = '';
             
-            // Add animation for smooth exit
-            if (nav) nav.style.transform = 'translateX(100%)';
+            // Remove inline transform to let CSS handle positioning
+            if (nav) nav.style.transform = '';
         }
         
         // Event listeners
@@ -112,7 +107,8 @@
             if (window.innerWidth <= 768) {
                 mobileMenuBtn.style.display = 'flex';
                 nav.classList.remove('active');
-                nav.style.transform = 'translateX(100%)';
+                // Don't set transform here - let CSS handle it
+                nav.style.transform = '';
             } else {
                 mobileMenuBtn.style.display = 'none';
                 nav.style.transform = '';
@@ -125,10 +121,29 @@
         window.addEventListener('resize', handleWindowSize);
     }
     
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initMobileMenu);
-    } else {
-        initMobileMenu();
+    // Initialize when DOM is ready OR when header is ready
+    function tryInit() {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', tryInit);
+        } else {
+            // Check if header exists, if not wait for headerReady event
+            if (document.querySelector('.mobile-menu-btn')) {
+                initMobileMenu();
+            } else {
+                // Wait for header to be ready
+                document.addEventListener('headerReady', function() {
+                    initMobileMenu();
+                }, { once: true });
+                
+                // Fallback: try again after a short delay
+                setTimeout(function() {
+                    if (document.querySelector('.mobile-menu-btn') && !document.querySelector('.mobile-menu-overlay')) {
+                        initMobileMenu();
+                    }
+                }, 100);
+            }
+        }
     }
+    
+    tryInit();
 })();
