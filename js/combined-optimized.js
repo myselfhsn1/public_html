@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded',function(){
         headerEl.innerHTML=`<div class="container nav-container"><a href="${bp}" class="logo"><i class="fas fa-mosque"></i><div class="logo-text">Islam<span>Hub</span></div></a><div class="mobile-menu-btn"><i class="fas fa-bars"></i></div><nav><ul><li><a href="${bp}">Home</a></li><li><a href="${bp}courses">Courses</a></li><li><a href="${bp}#testimonials">Testimonials</a></li><li><a href="${bp}#contact">Contact</a></li></ul></nav></div>`;
     }
     
+    // Dispatch custom event to notify header is ready
+    setTimeout(function(){
+        document.dispatchEvent(new CustomEvent('headerReady'));
+    },0);
+    
     // Footer (deferred - below fold)
     whenIdle(function(){
         let footerEl=document.querySelector('footer');

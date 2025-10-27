@@ -95,6 +95,11 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.insertAdjacentHTML('afterbegin', headerHTML);
         }
     }
+    
+    // Dispatch custom event to notify header is ready
+    setTimeout(function(){
+        document.dispatchEvent(new CustomEvent('headerReady'));
+    },0);
 
     // Insert footer - check if already exists
     let footerElement = document.querySelector('footer');
